@@ -1,0 +1,5 @@
+output_resolution   1024
+output_file         ./output.png
+camera_id           1
+light_id            1
+num_samples         4
