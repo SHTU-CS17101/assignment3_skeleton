@@ -10,8 +10,9 @@
 class Texture
 {
 protected:
-    /* An array with width x height x 3 elements.
-       Data arranged in r1, g1, b2, r2, g2, b2, ..., ri, gi, bi, ... */
+    /* An array with width x height x 3 elements
+       Data arranged in r0, g0, b0, r1, g1, b1, ..., ri, gi, bi, ...
+       (0, 0) is located at the left-top corner, (1, 1) is located at the right-bottom corner */
     float* data;
     unsigned int width;
     unsigned int height;

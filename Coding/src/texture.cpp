@@ -70,6 +70,28 @@ Texture Texture::loadFromPath(std::string path)
 
 Texture Texture::generateCheckerboard(Eigen::Vector3f primary_rgb, Eigen::Vector3f secondary_rgb, unsigned int num_ckers)
 {
-    //// TODO
-    UNREACHABLE;
+    int checker_size = 32;
+    int w = num_ckers * checker_size, h = num_ckers * checker_size;
+
+    Eigen::Vector3f color_list[2];
+    color_list[0] = primary_rgb;
+    color_list[1] = secondary_rgb;
+
+    Texture tex;
+    tex.width = w;
+    tex.height = h;
+    tex.data = new float[tex.width * tex.height * 3];
+
+    for (int y = 0; y < h; ++y)
+    {
+        for (int x = 0; x < w; ++x)
+        {
+            Eigen::Vector3f color = color_list[((int)(x / checker_size) + (int)(y / checker_size)) % 2];
+            tex.data[(y * w + x) * 3] = color[0];
+            tex.data[(y * w + x) * 3 + 1] = color[1];
+            tex.data[(y * w + x) * 3 + 2] = color[2];
+        }
+    }
+
+    return tex;
 }
