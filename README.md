@@ -36,7 +36,7 @@ The "config_default.txt" is a configuration file, where you can specify the numb
 
 ## Third-party Libraries
 
-Third-party libraries are placed in the `3rdLibs/` directory. You are NOT allowed to use any other third-party libraries than:
+Third-party libraries are placed in the `3rdLibs/` directory. You are NOT allowed to use any third-party libraries other than:
 
 - Eigen
 - stb_image
